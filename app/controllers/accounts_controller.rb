@@ -7,15 +7,8 @@ class AccountsController < ApplicationController
     @accounts.each { |account| @total += account.cash }
   end
 
-  def show
-  end
-
   def new
     @account = Account.new
-  end
-
-  def edit
-    @account = Account.find(params[:id])
   end
 
   def create
@@ -25,11 +18,6 @@ class AccountsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
-
-  
   end
 
   def destroy

@@ -1,18 +1,3 @@
-= form_for(@transaction) do |f|
-  - if flash[:notice]
-    .notice= flash[:notice]
-
-  .field
-    = f.label :account_source
-    %br/
-    = f.text_field :account_source
-  .field
-    = f.label :account_destination
-    %br/
-    = f.text_field :account_destination
-    .field
-    = f.label :cash
-    %br/
-    = f.text_field :cash
-  .actions
-    = f.submit
+%h1
+  New transaction
+= render 'form'
