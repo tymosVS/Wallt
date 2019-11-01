@@ -1,0 +1,16 @@
+%h1 Transactions
+= link_to 'Create new transaction', new_transaction_path
+%table
+  %thead
+    %tr
+      %th Source
+      %th Destination
+      %th Cash
+  %tbody
+    - @transactions.each do |transaction|
+      %tr
+        %td= transaction.account_source
+        %td= transaction.account_destination
+        %td= transaction.cash
+
+= link_to 'Back', accounts_path(@type)

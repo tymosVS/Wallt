@@ -1,0 +1,9 @@
+%h1 Account #{ params[:effect] }
+%p Account id: #{ @account.acount_id }
+= form_for(@account) do |f|
+  .field
+    = f.label :cash
+    %br/
+    = f.text_field :cash
+  .actions
+    = f.submit

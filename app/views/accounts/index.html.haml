@@ -1,0 +1,33 @@
+%h1 Accounts
+.transactions-links
+  = link_to 'Create new transaction', new_transaction_path
+  = link_to 'Show all transactions', transactions_path
+%br
+.accounts-links
+  = link_to 'Create new account', new_account_path
+
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Account_id
+      %th Cash
+      %th Type_Account
+      %th Deelete
+  %tbody
+    - @accounts.each do |account|
+      %tr
+        %td= account.title
+        %td= account.acount_id
+        %td= account.cash
+        %td= account.type
+        %td= link_to 'delete'.capitalize, account_path(account),
+              method: :delete, data: { confirm: 'Are you sure?' }
+
+.account-links
+  = link_to 'Show for stocks', stocks_path
+  = link_to 'Show for users', users_path
+  = link_to 'Show for teams', teams_path
+  = link_to 'Show for all', accounts_path
+%h4 Total cash: #{@total}
